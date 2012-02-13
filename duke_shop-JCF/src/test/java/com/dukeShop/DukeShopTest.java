@@ -25,35 +25,10 @@ public class DukeShopTest {
 		System.out.println("구동되나?");
 	}
 
-	@Test
-	public void 조회테스트() {
-		List<Product> queryForList = queryExcutor.queryForList("product.select", null, Product.class);
 
-		for(Product p: queryForList) {
-			System.out.println(p.getPname());
-		}
 
-	}
 
-	@Test
-	public void 조회테스트2() {
-		List<Orders> queryForList = queryExcutor.queryForList("orders.select", null, Orders.class);
 
-		for(Orders p: queryForList) {
-			System.out.println(p.getPid());
-		}
-
-	}
-
-	@Test
-	public void 조회테스트3() {
-		List<Customer> queryForList = queryExcutor.queryForList("customer.select", null, Customer.class);
-
-		for(Customer p: queryForList) {
-			System.out.println(p.getName());
-		}
-
-	}
 
 
 }

@@ -4,5 +4,23 @@
 	<statement id="select" resultClass="com.dukeShop.model.Product">
 		select * from product
 	</statement>
+	<insert id="insert" parameterClass="com.dukeShop.model.Product">
+		insert into product values(
+		#pid#,
+		#pname#,
+		#photo#,
+		#description#,
+		#price#,
+		#stock#
 
+		)
+	</insert>
+	<statement id="update" parameterClass="com.dukeShop.model.Product">
+		update product set price=#price#,
+		stock=#stock# where pid=#pid#
+	</statement>
+
+	<statement id="delete" parameterClass="com.dukeShop.model.Product">
+		delete from product where pid=#pid#
+	</statement>
 </sqlMap>

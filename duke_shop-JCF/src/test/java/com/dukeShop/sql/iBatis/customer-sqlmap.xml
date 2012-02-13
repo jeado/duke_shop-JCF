@@ -4,7 +4,23 @@
 	<statement id="select" resultClass="com.dukeShop.model.Customer">
 		select * from customer
 	</statement>
-	
-	
 
+	<insert id="insert" parameterClass="com.dukeShop.model.Customer">
+		insert into customer values(
+		#cid#,
+		#passwd#,
+		#name#,
+		#email#,
+		#phone#
+
+		)
+	</insert>
+	<statement id="update" parameterClass="com.dukeShop.model.Customer">
+		update customer set name=#name#,
+		email=#email# where cid=#cid#
+	</statement>
+
+	<statement id="delete" parameterClass="com.dukeShop.model.Customer">
+		delete from customer where cid=#cid#
+	</statement>
 </sqlMap>
