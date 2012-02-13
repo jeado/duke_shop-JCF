@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD SQL Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+<sqlMap namespace="orders">
+	<statement id="select" resultClass="com.dukeShop.model.Orders">
+		select * from orders
+	</statement>
+
+	<insert id="insert" parameterClass="com.dukeShop.model.Orders">
+		insert into orders values(
+		ORDERS_SEQUENCE.nextVal,
+		#pid#,
+		#cid#,
+		#qty#,
+		sysdate
+
+		)
+	</insert>
+	<statement id="update" parameterClass="com.dukeShop.model.Orders">
+		update orders set pid=#pid#,
+		qty=#qty# where oid=#oid#
+
+	</statement>
+
+	<statement id="delete" parameterClass="com.dukeShop.model.Orders">
+		delete from orders where oid=#oid#
+	</statement>
+</sqlMap>
