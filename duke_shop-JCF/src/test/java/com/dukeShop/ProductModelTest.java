@@ -11,53 +11,52 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dukeShop.model.*;
+import com.dukeShop.service.ProductService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:config/applicationContext.xml")
 
 public class ProductModelTest {
-	@Autowired
-	private QueryExecutor queryExecutor;
-	
-	
-	@Test
-	public void 제품_입력테스트(){
-		Product p = new Product ();
-		p.setPid("p006");
-		p.setPname("밝은셔츠");
-		p.setPhoto("images/s1.jpg");
-		p.setDescription("바보");
-		p.setPrice(20000);
-		p.setStock(10000);
-		queryExecutor.update("product.insert", p);
+//	@Autowired
+//	private QueryExecutor queryExecutor;
+
+
+	private Product product;
+
+	private ProductService productService;
+
+	public void 셋업(){
+		product = new Product ();
+		product.setPid("p007");
+		product.setPname("밝은셔츠");
+		product.setPhoto("images/s1.jpg");
+		product.setDescription("바보");
+		product.setPrice(20000);
+		product.setStock(10000);
 	}
-	
-	@Test
-	public void 제품_수정테스트(){
-		Product p = new Product ();
-		p.setPid("p006");
-		p.setPname("밝은셔츠");
-		p.setPhoto("images/s1.jpg");
-		p.setDescription("바보");
-		p.setPrice(40000000);
-		p.setStock(10000);
-		queryExecutor.update("product.insert", p);
-	}
-	
-	@Test
-	public void 제품_삭제테스트(){
-		Product p = new Product ();
-		p.setPid("p006");
-		queryExecutor.update("product.delete", p);
-	}
-	
+
 	@Test
 	public void 제품_조회테스트(){
-		List <Product> queryForList = queryExecutor.queryForList("product.select", null, Product.class);
-	
-	for (Product p: queryForList){
-		System.out.println(p.getPname());
+		List <Product> allProduct = productService.getAllProduct();
+		for (Product p: allProduct){
+			System.out.println(p.getPid());
+		}
+
 	}
-	
+	@Test
+	public void 제품_입력테스트(){
+		productService.insertProduct(product);
 	}
+
+	@Test
+	public void 제품_수정테스트(){
+		productService.updateProduct(product);
+	}
+
+	@Test
+	public void 제품_삭제테스트(){
+		productService.deleteProduct(product);
+	}
+
+
 }
