@@ -10,6 +10,7 @@ public class Customer implements Serializable {
 	private String passwd;
 	private String name;
 	private String email;
+	private String phone;
 
 	public Customer() {
 		super();
@@ -57,6 +58,14 @@ public class Customer implements Serializable {
 		this.passwd = password;
 		this.name = name;
 		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 }

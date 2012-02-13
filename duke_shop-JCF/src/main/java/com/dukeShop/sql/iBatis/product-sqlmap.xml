@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD SQL Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap namespace="product">
+
+	<statement id="select" resultClass="com.dukeShop.model.Product">
+			select * from product
+	</statement>
+
+	<statement id="insert" parameterClass="com.dukeShop.model.Product">
+		insert into product(
+			PID,
+			PNAME,
+			PHOTO,
+			DESCRIPTION,
+			PRICE,
+			STOCK
+		)values(
+			#pid#,
+			#pname#,
+			#photo#,
+			#description#,
+			#price#,
+			#stock#
+		)
+	</statement>
+
+	<statement id="update" parameterClass="com.dukeShop.model.Product">
+		update product set
+			PNAME = #pname#,
+			PHOTO = #photo#,
+			DESCRIPTION = #description#,
+			PRICE = #price#,
+			STOCK = #stock#
+	</statement>
+
+	<statement id="delete" parameterClass="com.dukeShop.model.Product">
+		delete from product where pid = #pid#
+	</statement>
+</sqlMap>

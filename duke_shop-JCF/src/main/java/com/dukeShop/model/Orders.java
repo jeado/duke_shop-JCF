@@ -9,7 +9,7 @@ public class Orders implements Serializable {
 	private String pid;
 	private String id;
 	private int qty;
-	private String date;
+	private String odate;
 
 	public Orders() {
 	}
@@ -20,7 +20,7 @@ public class Orders implements Serializable {
 		this.pid = pid;
 		this.id = id;
 		this.qty = qty;
-		this.date = date;
+		this.odate = date;
 	}
 
 	public String getOid() {
@@ -56,11 +56,11 @@ public class Orders implements Serializable {
 	}
 
 	public String getDate() {
-		return date;
+		return odate;
 	}
 
 	public void setDate(String date) {
-		this.date = date;
+		this.odate = date;
 	}
 
 }

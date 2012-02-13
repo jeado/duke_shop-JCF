@@ -7,4 +7,20 @@
 			select * from orders
 	</statement>
 
+	<insert id="insert" parameterClass="com.dukeShop.model.Orders">
+		insert into Orders(
+			oid,
+			pid,
+			id,
+			qty,
+			odate
+		)values(
+			ORDERS_SEQUENCE.nextVal,
+			#pid#,
+			#id#,
+			#qty#,
+			sysdate
+		)
+	</insert>
+
 </sqlMap>
