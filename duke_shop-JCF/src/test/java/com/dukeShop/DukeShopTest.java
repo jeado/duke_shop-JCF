@@ -17,7 +17,6 @@ import com.dukeShop.model.Product;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:config/applicationContext.xml")
-
 public class DukeShopTest {
 
 	@Autowired

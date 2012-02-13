@@ -4,6 +4,7 @@ import java.util.List;
 
 import jcf.query.core.QueryExecutor;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ public class CustomerModelTest {
 
 	@Autowired
 	private QueryExecutor queryExcutor;
+
+	@Before
+	public void 셋업(){
+
+	}
 
 	@Test
 	public void 고객_입력테스트(){
@@ -47,15 +53,13 @@ public class CustomerModelTest {
 
 	@Test
 	public void 고객_수정테스트(){
-
 		Customer customer = new Customer();
 		customer.setId("woori");
-		customer.setPasswd("bank");
-		customer.setPhone("02-1111-2222");
-		customer.setEmail("woori@bank.net");
-		customer.setName("우리은행");
-
-		queryExcutor.update("orders.update", customer);
+		customer.setPasswd("woori");
+		customer.setPhone("02-555-6666");
+		customer.setEmail("woori@bank.com");
+		customer.setName("My우리은행");
+		queryExcutor.update("customer.update", customer);
 	}
 
 	@Test
