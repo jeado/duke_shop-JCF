@@ -4,6 +4,8 @@ import java.util.List;
 
 import jcf.query.core.QueryExecutor;
 
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +19,13 @@ import com.dukeShop.service.ProductService;
 @ContextConfiguration("classpath:config/applicationContext.xml")
 
 public class ProductModelTest {
-//	@Autowired
-//	private QueryExecutor queryExecutor;
-
 
 	private Product product;
 
+	@Autowired
 	private ProductService productService;
 
+	@Before
 	public void 셋업(){
 		product = new Product ();
 		product.setPid("p007");
@@ -43,6 +44,7 @@ public class ProductModelTest {
 		}
 
 	}
+
 	@Test
 	public void 제품_입력테스트(){
 		productService.insertProduct(product);

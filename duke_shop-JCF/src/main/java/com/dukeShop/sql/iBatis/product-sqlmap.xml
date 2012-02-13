@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD SQL Map 2.0//EN' 
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD SQL Map 2.0//EN'
 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
 <sqlMap namespace ="product">
@@ -17,25 +17,19 @@
 			#stock#
 		)
 	</insert>
-	
+
 	<delete id="delete" parameterClass="com.dukeShop.model.Product">
-		DELETE FROM PRODUCT WHERE pid = #pid# 	
+		DELETE FROM PRODUCT WHERE pid = #pid#
 	</delete>
-	
+
 	<statement id ="update" parameterClass="com.dukeShop.model.Product">
-		UPDATE PRODUCT ( 
-			#pname#,
-			#photo#,
-			#description#,
-			#price#,
-			#stock#
-		)SET(
-			pname,
-			photo,
-			description,
-			price,
-			stock
-		)
+		UPDATE PRODUCT SET
+			pname =	#pname#,
+			photo = #photo#,
+			description = #description#,
+			price = #price#,
+			stock = #stock#
+
 		WHERE pid = #pid#
 	</statement>
 
