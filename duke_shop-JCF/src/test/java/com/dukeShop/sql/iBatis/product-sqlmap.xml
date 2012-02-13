@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD SQL Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap namespace="product">
+<statement id="select" resultClass="com.dukeShop.model.Product">
+	select * from product
+</statement>
+<statement id="select2" resultClass="com.dukeShop.model.Customer">
+	select * from customer
+</statement>
+<statement id="select3" resultClass="com.dukeShop.model.Orders">
+	select * from orders
+</statement>
+
+</sqlMap>
