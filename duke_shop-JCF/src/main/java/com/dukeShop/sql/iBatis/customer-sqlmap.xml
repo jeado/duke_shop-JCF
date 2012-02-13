@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD SQL Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap namespace="customer">
+
+<statement id="select" resultClass="com.dukeShop.model.Customer">
+	select * from Customer
+</statement>
+
+<insert id="insert" parameterClass="com.dukeShop.model.Customer">
+
+		INSERT INTO CUSTOMER
+	(
+	pid, passwd, phone, email, name
+	)
+	VALUES(
+	#pid#, #passwd#, #phone#, #email#, #name#
+	)
+
+
+</insert>
+
+<update id="update" parameterClass="com.dukeShop.model.Customer">
+
+		update customer set passwd=#passwd#, phone=#phone#, email=#email#, name=#name# where pid=#pid#</update>
+
+<delete id="delete" parameterClass="com.dukeShop.model.Customer">
+
+		DELETE FROM customer where pid=#pid#
+
+
+</delete>
+
+</sqlMap>
