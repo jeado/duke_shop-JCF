@@ -20,7 +20,7 @@
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
 	</context:component-scan>
-
+ 
 	<jcfsua:sua-config auto-config="true" webflow-prefix="/WEB-INF/jsp/"/>
 
 	 <!-- Exception Resolver -->
