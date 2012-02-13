@@ -5,11 +5,14 @@
 <statement id="select" resultClass="com.dukeShop.model.Product">
 	select * from product
 </statement>
-<statement id="select2" resultClass="com.dukeShop.model.Customer">
-	select * from customer
-</statement>
-<statement id="select3" resultClass="com.dukeShop.model.Orders">
-	select * from orders
-</statement>
 
+
+<insert id="insert" parameterClass="com.dukeShop.model.Product">
+	INSERT INTO PRODUCT(
+	pid, pname, photo, description, price, stock
+	) VALUES(
+	#pid#, #pname#, #photo#, #description#, #price#, #stock#
+	)
+
+</insert>
 </sqlMap>

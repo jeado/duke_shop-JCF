@@ -6,63 +6,59 @@ import java.io.Serializable;
 public class Customer implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
-	private String id;
+//pid, passwd, phone, email, name
+	private String pid;
 	private String passwd;
-	private String name;
+	private String phone;
 	private String email;
+	private String name;
+	//custom.setPid("d54");
+	//custom.setPasswd("1ㅂ");
+	//custom.setPhone("030ㅇㄹ-23");
+	//custom.setEmail("loㅋk@dd");
+	//custom.setName("바2");
 
-	public Customer() {
-		super();
+	public Customer(){}
+	public String getPid() {
+		return pid;
 	}
-
-
-	public String getId() {
-		return id;
+	public void setPid(String pid) {
+		this.pid = pid;
 	}
-
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-
-	public String getpasswd() {
+	public String getPasswd() {
 		return passwd;
 	}
-
-
-	public void setpasswd(String passwd) {
+	public void setPasswd(String passwd) {
 		this.passwd = passwd;
 	}
-
-
-	public String getName() {
-		return name;
+	public String getPhone() {
+		return phone;
 	}
-
-
-	public void setName(String name) {
-		this.name = name;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-	public Customer(String userId, String password, String name,String email) {
-		super();
-		this.id = userId;
-		this.passwd = password;
-		this.name = name;
-		this.email=email;
+	public String getName() {
+		return name;
 	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Customer(String pid, String passwd, String phone, String email,
+			String name) {
+		super();
+		this.pid = pid;
+		this.passwd = passwd;
+		this.phone = phone;
+		this.email = email;
+		this.name = name;
+	}
+
 
 
 

@@ -36,7 +36,7 @@
 		p:driverClassName="${jdbc.driverClassName}" p:url="${jdbc.url}"
 		p:username="${jdbc.username}" p:password="${jdbc.password}">
 	</bean>
-
+	
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="find*" read-only="true" />

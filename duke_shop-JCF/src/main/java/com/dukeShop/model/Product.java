@@ -8,19 +8,20 @@ public class Product implements Serializable{
 		private String pid;
 		private String pname;
 		private String photo;
-		private String desc;
+		private String description;
 		private int price;
 		private int stock;
+		//pid, pname, photo, description, price, stock
 
 		public Product (){}
 
-		public Product(String pid, String pname, String photo, String desc,
+		public Product(String pid, String pname, String photo, String description,
 				int price, int stock) {
 			super();
 			this.pid = pid;
 			this.pname = pname;
 			this.photo = photo;
-			this.desc = desc;
+			this.description = description;
 			this.stock = stock;
 			this.price = price;
 		}
@@ -43,11 +44,11 @@ public class Product implements Serializable{
 		public void setPhoto(String photo) {
 			this.photo = photo;
 		}
-		public String getDesc() {
-			return desc;
+		public String getdescription() {
+			return description;
 		}
-		public void setDesc(String desc) {
-			this.desc = desc;
+		public void setDescription(String description) {
+			this.description = description;
 		}
 		public int getStock() {
 			return stock;
