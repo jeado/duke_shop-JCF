@@ -7,8 +7,6 @@ import jcf.query.core.QueryExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import system.dao.CommonDao;
-
 import com.dukeShop.model.Product;
 
 @Service
@@ -26,7 +24,7 @@ public class ProductService {
 	}
 
 	public void updateProduct (Product product){
-		dao.update("product.insert", product);
+		dao.update("product.update", product);
 	}
 
 	public void deleteProduct (Product product){
