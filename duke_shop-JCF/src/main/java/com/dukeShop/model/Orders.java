@@ -1,4 +1,4 @@
-package sumin.summer.model;
+package com.dukeShop.model;
 
 import java.io.Serializable;
 

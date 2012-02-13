@@ -7,7 +7,6 @@ import java.util.Map;
 import jcf.sua.SuaConstants;
 import jcf.sua.mvc.view.MciView;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.Ordered;

@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import sumin.summer.model.Customer;
 import sumin.summer.model.Member;
 import sumin.summer.model.Product;
-
 import fw.ConnectionMaker;
 
 
@@ -77,7 +76,7 @@ public class ShopDao  {
 			rs=pst.executeQuery();
 			/**4 조회의 경우 SQL 쿼리의 실행 결과를 ResultSet으로 받아서 정보를 저장할 오브젝트(여기서는 Customer 에 옮겨준다.**/
 			while ( rs.next()) {
-				cust=new Customer(rs.getString(1),rs.getString(2),rs.getString(3));
+				//cust=new Customer(rs.getString(1),rs.getString(2),rs.getString(5));
 			}
 			/**6. JDBC API가 만들어내는 예외;exception 를 잡아서 직접 처리하거나, 메소드에 throws를 선언해서 예외가 발생하면 메소드 밖으로 던지게 한다.**/
 		}catch(Exception e){

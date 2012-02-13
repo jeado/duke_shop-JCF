@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import sumin.summer.dao.ShopDao;
 import sumin.summer.model.Product;
-
 import fw.DaoFactory;
 
 
