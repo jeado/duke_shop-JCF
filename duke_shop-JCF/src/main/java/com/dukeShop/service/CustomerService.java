@@ -19,14 +19,14 @@ public class CustomerService {
 	}
 
 	void insertCustomer(Customer customer) {
-		dao.update("orders.insert", customer);
+		dao.update("customer.insert", customer);
 	}
 
 	void updateCustomer(Customer customer) {
-		dao.update("orders.update", customer);
+		dao.update("customer.update", customer);
 	}
 
 	void deleteCustomer(Customer customer) {
-		dao.update("orders.delete", customer);
+		dao.update("customer.delete", customer);
 	}
 }
