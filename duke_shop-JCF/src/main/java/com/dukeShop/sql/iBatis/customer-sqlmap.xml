@@ -12,7 +12,6 @@
 		#name#,
 		#email#,
 		#phone#
-
 		)
 	</insert>
 	<statement id="update" parameterClass="com.dukeShop.model.Customer">
