@@ -9,22 +9,22 @@
 
 	<insert id = "insert" parameterClass="com.dukeShop.model.Customer">
 		insert into customer values(
-		#id#,
-		#passwd#,
-		#phone#,
-		#email#,
-		#name#
+			#id#,
+			#passwd#,
+			#phone#,
+			#email#,
+			#name#
 		)
 	</insert>
 
 	<update id = "update" parameterClass="com.dukeShop.model.Customer">
-		update customer set(
-		id = #id#,
-		passwd = #passwd#,
-		phone = #phone#,
-		email = #email#,
-		name = #name#
-		)
+		update customer set
+			passwd = #passwd#,
+			phone = #phone#,
+			email = #email#,
+			name = #name#
+
+		where id = #id#
 	</update>
 
 	<statement id="delete" parameterClass="com.dukeShop.model.Customer">

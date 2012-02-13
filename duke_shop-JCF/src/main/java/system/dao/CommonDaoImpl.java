@@ -6,6 +6,7 @@ import java.util.Map;
 import jcf.data.handler.StreamHandler;
 import jcf.query.core.QueryExecutor;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 
 /**
@@ -15,6 +16,7 @@ import org.springframework.jdbc.core.RowMapper;
  */
 public class CommonDaoImpl implements CommonDao {
 
+	@Autowired
 	private QueryExecutor queryExecutor;
 
 	public <T> void queryForStream(Object statementId, Object parameter, StreamHandler<T> streamHandler) {

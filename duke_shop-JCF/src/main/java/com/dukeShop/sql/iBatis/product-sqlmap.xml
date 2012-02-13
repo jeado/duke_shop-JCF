@@ -11,26 +11,25 @@
 		#pid#,
 		#pname#,
 		#photo#,
-		#desc#,
+		#description#,
 		#price#,
 		#stock#
 		)
 	</insert>
 
 	<update id = "update" parameterClass="com.dukeShop.model.Product">
-		UPDATE product SET(
-		pid=#pid#,
-		pname=#pname#,
-		photo=#photo#,
-		desc=#desc#,
-		price=#price#,
-		stock=#stock#
-		)
-		WHERE pid = #pid#
+		UPDATE product SET
+			pname=#pname#,
+			photo=#photo#,
+			description=#description#,
+			price=#price#,
+			stock=#stock#
+
+		where pid=#pid#
 	</update>
 
 	<statement id="delete" parameterClass="com.dukeShop.model.Product">
-		DELETE FROM orders where pid = #pid#
+		DELETE FROM product where pid = #pid#
 	</statement>
 
 </sqlMap>
