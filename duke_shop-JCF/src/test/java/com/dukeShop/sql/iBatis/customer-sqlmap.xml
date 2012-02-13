@@ -6,6 +6,39 @@
 	<statement id ="select" resultClass="com.dukeShop.model.Customer">
 		select * from customer
 	</statement>
+	
+	<insert id ="insert" parameterClass="com.dukeShop.model.Customer">
+		INSERT INTO CUSTOMER (
+			id,
+			passwd,
+			phone,
+			email,
+			name
+
+		)VALUES (
+			#id#,
+			#passwd#,
+			#phone#,
+			#email#,
+			#name#	
+
+		)
+	</insert>
+	
+	<delete id="delete" parameterClass="com.dukeShop.model.Customer">
+		DELETE FROM CUSTOMER WHERE id = #id# 	
+	</delete>
+	
+	
+	<statement id ="update" parameterClass="com.dukeShop.model.Customer">
+		UPDATE CUSTOMER SET 
+			id= #id#,
+			name= #name#,
+			passwd = #passwd#,
+			email = #email#,
+			phone = #phone#
+		WHERE id = #id#
+	</statement>
 
 
 </sqlMap>

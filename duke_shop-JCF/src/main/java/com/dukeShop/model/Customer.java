@@ -8,8 +8,10 @@ public class Customer implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	private String id;
-	private String password;
+	private String passwd;
 	private String name;
+	private String email; 
+	private String phone;
 
 	public Customer() {
 		super();
@@ -25,13 +27,16 @@ public class Customer implements Serializable{
 		this.id = id;
 	}
 
-	public String getPassword() {
-		return password;
+	
+
+
+	public String getPasswd() {
+		return passwd;
 	}
 
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
 	}
 
 
@@ -44,14 +49,53 @@ public class Customer implements Serializable{
 		this.name = name;
 	}
 
+	
+	public String getEmail() {
+		return email;
+	}
 
-	public Customer(String id, String password, String name) {
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+
+	public Customer(String id, String passwd, String name) {
 		super();
 		this.id = id;
-		this.password = password;
+		this.passwd = passwd;
 		this.name = name;
 	}
 
+	public Customer(String id, String passwd, String name, String email) {
+		super();
+		this.id = id;
+		this.passwd = passwd;
+		this.name = name;
+		this.email = email;
+	}
+
+
+	public Customer(String id, String passwd, String name, String email,
+			String phone) {
+		super();
+		this.id = id;
+		this.passwd = passwd;
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+	}
 
 
 

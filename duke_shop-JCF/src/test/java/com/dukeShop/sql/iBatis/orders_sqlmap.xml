@@ -6,6 +6,42 @@
 	<statement id ="select" resultClass="com.dukeShop.model.Orders">
 		select * from orders
 	</statement>
+	
+	<insert id ="insert" parameterClass="com.dukeShop.model.Orders">
+		INSERT INTO ORDERS (
+			oid,
+			pid,
+			id,
+			qty,
+			odate,
+			photo,
+			price
+		
+		) VALUES (
+			orders_sequence.nextval,
+			#pid#,
+			#id#,
+			#qty#,
+			sysdate,
+			#photo#,
+			#price#
+		)
+	</insert>
+	
+	<delete id="delete" parameterClass="com.dukeShop.model.Orders">
+		DELETE FROM ORDERS WHERE oid = #oid# 	
+	</delete>
+	
+	<statement id ="update" parameterClass="com.dukeShop.model.Orders">
+		UPDATE ORDERS SET 
+			pid = #pid#,
+			id = #id#,
+			qty = #qty#,
+			odate = #odate#,
+			photo = #photo#,
+			price = #price#
+		WHERE oid = #oid#
+	</statement>
 
 
 </sqlMap>
