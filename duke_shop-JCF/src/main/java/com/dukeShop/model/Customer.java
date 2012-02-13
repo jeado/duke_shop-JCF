@@ -16,8 +16,7 @@ public class Customer implements Serializable{
 	public Customer() {
 	}
 
-	public Customer(String id, String passwd, String phone, String email,
-			String name) {
+	public Customer(String id, String passwd, String phone, String email, String name) {
 		super();
 		this.id = id;
 		this.passwd = passwd;

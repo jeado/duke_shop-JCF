@@ -6,5 +6,31 @@
 	<statement id="select" resultClass="com.dukeShop.model.Product">
 		select * from product
 	</statement>
+	<insert id = "insert" parameterClass="com.dukeShop.model.Product">
+		insert into product values(
+		#pid#,
+		#pname#,
+		#photo#,
+		#desc#,
+		#price#,
+		#stock#
+		)
+	</insert>
+
+	<update id = "update" parameterClass="com.dukeShop.model.Product">
+		UPDATE product SET(
+		pid=#pid#,
+		pname=#pname#,
+		photo=#photo#,
+		desc=#desc#,
+		price=#price#,
+		stock=#stock#
+		)
+		WHERE id = #id#
+	</update>
+
+	<statement id="delete" parameterClass="com.dukeShop.model.Product">
+		DELETE FROM orders where pid = #pid#
+	</statement>
 
 </sqlMap>

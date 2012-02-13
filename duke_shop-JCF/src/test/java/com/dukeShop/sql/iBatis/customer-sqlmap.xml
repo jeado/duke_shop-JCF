@@ -7,4 +7,27 @@
 		select * from customer
 	</statement>
 
+	<insert id = "insert" parameterClass="com.dukeShop.model.Customer">
+		insert into customer values(
+		#id#,
+		#passwd#,
+		#phone#,
+		#email#,
+		#name#
+		)
+	</insert>
+
+	<update id = "update" parameterClass="com.dukeShop.model.Customer">
+		UPDATE customer SET(
+		id = #id#,
+		passwd = #passwd#,
+		phone = #phone#,
+		email = #email#,
+		name = #name#)
+		WHERE id = #id#
+	</update>
+
+	<statement id="delete" parameterClass="com.dukeShop.model.Customer">
+		DELETE FROM customer where id = #id#
+	</statement>
 </sqlMap>

@@ -10,6 +10,7 @@ public class Orders implements Serializable {
 	private String id;
 	private int qty;
 	private String date;
+	private int price;
 
 	public Orders() {
 	}
@@ -61,6 +62,14 @@ public class Orders implements Serializable {
 
 	public void setDate(String date) {
 		this.date = date;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
 	}
 
 }
