@@ -2,7 +2,6 @@ package com.dukeShop;
 
 import java.util.List;
 
-import jcf.query.core.QueryExecutor;
 
 import org.junit.Before;
 import org.junit.Test;
