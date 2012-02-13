@@ -4,6 +4,7 @@ import java.util.List;
 
 import jcf.query.core.QueryExecutor;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dukeShop.model.Customer;
+import com.dukeShop.model.Product;
+import com.dukeShop.service.CustomerService;
+import com.dukeShop.service.ProductService;
 
 
 
@@ -19,68 +23,46 @@ import com.dukeShop.model.Customer;
 public class CustomerModelTest {
 	@Autowired
 	private QueryExecutor queryExecuor;
-	
+
+	private Customer customer;
+
+	@Autowired
+	private CustomerService customerService;
+
+
+
+
+	@Before
+	public void 셋업(){
+		customer = new Customer();
+		customer.setId("ddddf");
+		customer.setPasswd("12345");
+		customer.setName("skskskk");
+		customer.setEmail("dfdfdf");
+		customer.setPhone("010-52356713444");
+	}
 	@Test
-	public void 고객테스트(){
-
-		List<Customer> queryForList =queryExecuor.queryForList("customer.select" , null ,  Customer.class );
-
-		for(Customer customer : queryForList){
-
+	public void 제품_조회테스트() {
+		List<Customer> allCustomer = customerService.getAllCustomer();
+		for(Customer customer : allCustomer) {
 			System.out.println(customer.getId());
-
-
 		}
 	}
 
 	@Test
-	public void 고객정보_입력테스트(){
-
-		Customer customer  =  new Customer();
-
-		customer.setId("abc");
-		customer.setPasswd("1111");
-		customer.setName("김윤희또라");
-		customer.setEmail("abcd");
-		customer.setPhone("010-5236-1593");
-
-		queryExecuor.update("customer.insert" , customer);
-
-
-	}
-
-
-	@Test
-	public void 고객정보_수정테스트(){
-
-		Customer customer  =  new Customer();
-
-		customer.setId("abc");
-		customer.setEmail("bbb");
-		
-		queryExecuor.update("customer.update" , customer);
-
-
+	public void 제품_입력테스트() {
+		customerService.insertCustomer(customer);
 	}
 
 	@Test
-	public void 고객정보_삭제테스트(){
-
-		Customer customer  =  new Customer();
-
-		customer.setId("moon");
-		
-	
-		queryExecuor.update("customer.delete" , customer);
-
-
+	public void 제품_수정테스트() {
+		customerService.updateCustomer(customer);
 	}
 
-	
-	
-
-
-
+	@Test
+	public void 제품_삭제테스트() {
+		customerService.deleteCustomer(customer);
+	}
 
 
 
