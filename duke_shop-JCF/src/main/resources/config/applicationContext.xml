@@ -26,6 +26,7 @@
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 
+
 	<jcfquery:query-config id="queryExecutor"
 		datasource="dataSource" template-engine-type="IBATIS"
 		ibatis-sqlmap-client="sqlMapClient" />
