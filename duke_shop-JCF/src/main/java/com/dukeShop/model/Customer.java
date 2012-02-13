@@ -1,4 +1,4 @@
-package sumin.summer.model;
+package com.dukeShop.model;
 
 import java.io.Serializable;
 
@@ -7,7 +7,7 @@ public class Customer implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	private String userId;
+	private String id;
 	private String password;
 	private String name;
 
@@ -15,19 +15,19 @@ public class Customer implements Serializable{
 		super();
 	}
 
-	public Customer(String userId, String password, String name) {
+	public Customer(String id, String password, String name) {
 		super();
-		this.userId = userId;
+		this.id = id;
 		this.password = password;
 		this.name = name;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getId() {
+		return id;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getPassword() {
@@ -44,10 +44,6 @@ public class Customer implements Serializable{
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 }
