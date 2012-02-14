@@ -20,18 +20,6 @@
 </head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <body class="mainbody">
-<%
-	String pid = request.getParameter("pid");
-	ArrayList <Product> lists = (ArrayList <Product>)session.getAttribute("pp");
-	for (Product p: lists){
-		if(pid.equals(p.getPid())){
-			session.setAttribute("detail", p);
-			break;
-		}
-	}
-
-
-%>
 <form action="" method="POST">
 		<table class="productdetail" align="center">
 			<tr>

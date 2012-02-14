@@ -32,6 +32,7 @@
 			DESCRIPTION = #description#,
 			PRICE = #price#,
 			STOCK = #stock#
+		where pid = #pid#
 	</statement>
 
 	<statement id="delete" parameterClass="com.dukeShop.model.Product">

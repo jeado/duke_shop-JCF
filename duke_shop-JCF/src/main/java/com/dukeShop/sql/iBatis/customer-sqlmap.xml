@@ -7,6 +7,18 @@
 			select * from CUSTOMER
 	</statement>
 
+
+	<statement id="find" parameterClass="java.util.Map" resultClass="com.dukeShop.model.Customer">
+		select * from CUSTOMER
+
+		<dynamic prepend="where">
+			<isNotEmpty property="id" prepend="and">
+				id = #id#
+			</isNotEmpty>
+		</dynamic>
+
+	</statement>
+
 	<insert id="insert" parameterClass="com.dukeShop.model.Customer">
 		INSERT INTO CUSTOMER (
 				id,

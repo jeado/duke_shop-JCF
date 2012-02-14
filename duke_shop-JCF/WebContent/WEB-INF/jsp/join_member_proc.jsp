@@ -8,13 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	request.setCharacterEncoding("UTF-8");%>
-
-아이디: ${member.userId}  <br/>
+<%request.setCharacterEncoding("UTF-8");%>
+아이디: ${member.id}  <br/>
 이름: ${member.name} <br/>
-부서: ${member.deptName} <br/>
-등록일: ${member.regDate} <br/>
+전화번호: ${member.phone} <br/>
 </body>
 
 <a href='<%= request.getContextPath() %>/'> 첫화면으로 </a>

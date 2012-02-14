@@ -14,27 +14,20 @@
 		<table class ="producttable"  align="center">
 			<tr>
 				<td>ID</td>
-				<td>사진</td>
 				<td>이름</td>
-				<td>설명</td>
-				<td>가격</td>
-				<td>재고량</td>
+				<td>전화번호</td>
+				<td>이메일</td>
 			</tr>
-		<c:forEach var="p" items="${sessionScope.pp}">
+		<c:forEach var="p" items="${pp}">
 			<tr>
-				<td><a href="product_detail.jsp?pid=${p.pid}">${p.pid}</a></td>
-				<td><a href="product_detail.jsp?pid=${p.pid}">
-					<img src="${p.photo }" width="100" height="100"/></a></td>
-				<td>${p.pname}</td>
-				<td>${p.desc }</td>
-				<td>${p.price }</td>
-				<td>${p.stock }</td>
+				<td>${p.id}</td>
+				<td>${p.name }</td>
+				<td>${p.phone }</td>
+				<td>${p.email }</td>
 			</tr>
-		
+
 		</c:forEach>
 		</table>
-	
-	
 	</form>
 </body>
 </html>

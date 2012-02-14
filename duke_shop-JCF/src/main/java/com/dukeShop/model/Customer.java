@@ -1,10 +1,6 @@
 package com.dukeShop.model;
 
-import java.io.Serializable;
-
-public class Customer implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class Customer {
 
 	private String id;
 	private String passwd;
@@ -46,10 +42,6 @@ public class Customer implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
 	}
 
 	public Customer(String userId, String password, String name, String email) {
