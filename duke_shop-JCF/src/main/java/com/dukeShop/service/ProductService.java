@@ -18,7 +18,7 @@ public class ProductService {
 
 	public List<Product> getAllProduct() {
 
-		return dao.queryForList(ProductQuery.selectAll, null, Product.class);
+		return dao.queryForList("product.select", null, Product.class);
 
 	}
 	public void insertProduct(Product product) {
@@ -32,3 +32,25 @@ public class ProductService {
 	}
  
 }
+
+//@Service
+//public class ProductService {
+//	@Autowired
+//	private QueryExecutor dao;
+//
+//	public List<Product> getAllProduct() {
+//
+//		return dao.queryForList(ProductQuery.selectAll, null, Product.class);
+//
+//	}
+//	public void insertProduct(Product product) {
+//		dao.update(ProductQuery.insert, product);
+//	}
+//	public void updateProduct(Product product) {
+//		dao.update(ProductQuery.update, product);
+//	}
+//	public void deleteProduct(Product product) {
+//		dao.update(ProductQuery.delete, product);
+//	}
+// 
+//}

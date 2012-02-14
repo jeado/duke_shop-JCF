@@ -23,9 +23,9 @@ public class CustomerModelTest {
 	@Before
 	public void 셋업() {
 		c = new Customer();
-		c.setUserId("kgyrt");
+		c.setCid("kgyrt");
 		c.setName("aggg");
-		c.setPassword("1111");
+		c.setPasswd("1111");
 		c.setPhone("0000");
 		c.setEmail("email");
 	}

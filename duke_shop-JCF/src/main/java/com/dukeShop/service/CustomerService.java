@@ -17,12 +17,12 @@ public class CustomerService {
 
 	public List<Customer> getAllCustomer() {
 
-		return dao.queryForList(CustomerQuery.selectAll, null, Customer.class);
+		return dao.queryForList("customer.select", null, Customer.class);
 
 	}
 
 	public void insertCustomer(Customer customer) {
-		dao.update(CustomerQuery.insert, customer);
+		dao.update("customer.insert", customer);
 	}
 
 	public void updateCustomer(Customer customer) {

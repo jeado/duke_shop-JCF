@@ -26,7 +26,7 @@
 				<td><a href="product_detail.jsp?pid=${p.pid}">
 					<img src="${p.photo }" width="100" height="100"/></a></td>
 				<td>${p.pname}</td>
-				<td>${p.desc }</td>
+				<td>${p.desc}</td>
 				<td>${p.price }</td>
 				<td>${p.stock }</td>
 			</tr>
