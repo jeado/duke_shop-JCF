@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD SQL Map 2.0//EN' 
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD SQL Map 2.0//EN'
 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
 <sqlMap namespace ="customer">
 	<statement id ="select" resultClass="com.dukeShop.model.Customer">
 		select * from customer
 	</statement>
-	
+
 	<insert id ="insert" parameterClass="com.dukeShop.model.Customer">
 		INSERT INTO CUSTOMER (
 			id,
@@ -20,18 +20,18 @@
 			#passwd#,
 			#phone#,
 			#email#,
-			#name#	
+			#name#
 
 		)
 	</insert>
-	
+
 	<delete id="delete" parameterClass="com.dukeShop.model.Customer">
-		DELETE FROM CUSTOMER WHERE id = #id# 	
+		DELETE FROM CUSTOMER WHERE id = #id#
 	</delete>
-	
-	
+
+
 	<statement id ="update" parameterClass="com.dukeShop.model.Customer">
-		UPDATE CUSTOMER SET 
+		UPDATE CUSTOMER SET
 			id= #id#,
 			name= #name#,
 			passwd = #passwd#,

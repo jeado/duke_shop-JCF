@@ -15,7 +15,7 @@ import com.dukeShop.model.*;
 import com.dukeShop.service.ProductService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:config/applicationContext.xml")
+@ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
 
 public class ProductModelTest {
 
@@ -27,8 +27,8 @@ public class ProductModelTest {
 	@Before
 	public void 셋업(){
 		product = new Product ();
-		product.setPid("p007");
-		product.setPname("안밝은셔츠");
+		product.setPid("p008");
+		product.setPname("qkqhtucm");
 		product.setPhoto("images/s1.jpg");
 		product.setDescription("바보");
 		product.setPrice(20000);
@@ -48,6 +48,7 @@ public class ProductModelTest {
 	@Test
 	public void 제품_입력테스트(){
 		productService.insertProduct(product);
+
 	}
 
 	@Test

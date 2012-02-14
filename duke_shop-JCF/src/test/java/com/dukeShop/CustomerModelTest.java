@@ -16,7 +16,12 @@ import com.dukeShop.service.CustomerService;
 import com.dukeShop.service.OrderService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:config/applicationContext.xml")
+//iBatis 사용
+//@ContextConfiguration("classpath:config/applicationContext.xml")
+
+
+//Groovy 사용
+@ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
 
 public class CustomerModelTest {
 
@@ -28,10 +33,10 @@ public class CustomerModelTest {
 	@Before
 	public void 셋업(){
 		customer = new Customer();
-		customer.setId("axzcd");
+		customer.setId("qwerty");
 		customer.setPasswd("2222");
 		customer.setEmail("andycloudy@msn.com");
-		customer.setName("sumin");
+		customer.setName("nuit");
 		customer.setPhone("4332377");
 	}
 
