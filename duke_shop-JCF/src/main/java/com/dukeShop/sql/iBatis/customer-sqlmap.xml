@@ -5,6 +5,20 @@
 		select * from customer
 	</statement>
 
+
+<statement id="find" parameterClass="java.util.Map" resultClass="com.dukeShop.model.Customer">
+	select * from customer
+	<dynamic prepend="where">
+		<isNotEmpty property="cid" prepend="or">
+		cid=#cid#
+		</isNotEmpty>
+		<isNotEmpty property="cid" prepend="or">
+		name=#cid#
+		</isNotEmpty>
+	
+	</dynamic>
+
+</statement>
 	<insert id="insert" parameterClass="com.dukeShop.model.Customer">
 		insert into customer values(
 		#cid#,
@@ -15,10 +29,13 @@
 
 		)
 	</insert>
+	
+
 	<statement id="update" parameterClass="com.dukeShop.model.Customer">
 		update customer set name=#name#,
 		email=#email# where cid=#cid#
 	</statement>
+
 
 	<statement id="delete" parameterClass="com.dukeShop.model.Customer">
 		delete from customer where cid=#cid#

@@ -1,9 +1,11 @@
 package com.dukeShop.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import jcf.sua.mvc.MciRequest;
 import jcf.sua.mvc.MciResponse;
+import jcf.upload.FileInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,23 @@ public class ProductController {
 		List<Product> allProduct = productservice.getAllProduct();
 		mciResponse.setList("pp",allProduct);
 		mciResponse.setViewName("index");
+		
 	}
+	@RequestMapping("insertProduct")
+	public void insertProduct(MciRequest mciRequest, MciResponse mciResponse) {
+		Map<String, Object> param = mciRequest.getParam();
+		System.out.println(param);
+		mciResponse.setViewName("fileview");
+	}
+	@RequestMapping("viewFile")
+	public void viewFile(MciRequest mciRequest,MciResponse mciResponse) {
+		mciResponse.setDownloadFile(new FileInfo("tempdir","j2me_arch.jpg"));
+		
+	}
+	@RequestMapping("showMeAFile") 
+	public void show(MciRequest mciRequest, MciResponse mciResponse) {
+		mciResponse.setViewName("fileview");
+	}
+	
 	
 }
