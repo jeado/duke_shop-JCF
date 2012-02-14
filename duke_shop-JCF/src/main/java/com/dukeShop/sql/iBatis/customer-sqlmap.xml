@@ -3,9 +3,21 @@
 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
 
 <sqlMap namespace ="customer">
-	<statement id ="select" resultClass="com.dukeShop.model.Customer">
+
+	<statement id = "select" resultClass= "com.dukeShop.model.Customer">
 		select * from customer
 	</statement>
+
+	<statement id = "find" parameterClass="java.util.Map" resultClass= "com.dukeShop.model.Customer">
+		SELECT * FROM CUSTOMER
+
+		<dynamic prepend="where">
+			<isNotEmpty property="id" prepend="and">
+				id = #id#
+			</isNotEmpty>
+		</dynamic>
+	</statement>
+
 
 	<insert id ="insert" parameterClass="com.dukeShop.model.Customer">
 		INSERT INTO CUSTOMER (

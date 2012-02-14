@@ -1,6 +1,7 @@
 package com.dukeShop.service;
 
 import java.util.List;
+import java.util.Map;
 
 import jcf.query.core.QueryExecutor;
 
@@ -18,26 +19,32 @@ public class CustomerService {
 
 	public List <Customer> getAllCustomer(){
 		//iBatis 사용 (xml 찾아가서 봐야 함)
-		//return dao.queryForList("customer.select", null, Customer.class);
+		return dao.queryForList("customer.select", null, Customer.class);
 
 		//Groovy 사용
 		//(selectAll 선택 & f3 누르면 해당 쿼리문의  Groovy 파일로 이동)
-		return dao.queryForList(CustomerQuery.selectAll, null, Customer.class);
+		//return dao.queryForList(CustomerQuery.selectAll, null, Customer.class);
+	}
+
+	public List <Customer> findCustomer(Map<String, String> map){
+
+		return dao.queryForList("customer.find", map, Customer.class);
+
 	}
 
 	public void insertCustomer (Customer customer){
-		//dao.update("customer.insert", customer);
+		dao.update("customer.insert", customer);
 
-		dao.update(CustomerQuery.insert, customer);
+		//dao.update(CustomerQuery.insert, customer);
 	}
 
 	public void updateCustomer (Customer customer){
-		//dao.update("customer.update", customer);
-		dao.update(CustomerQuery.update, customer);
+		dao.update("customer.update", customer);
+		//dao.update(CustomerQuery.update, customer);
 	}
 
 	public void deleteCustomer (Customer customer){
-		//dao.update("customer.delete", customer);
-		dao.update(CustomerQuery.delete, customer);
+		dao.update("customer.delete", customer);
+		//dao.update(CustomerQuery.delete, customer);
 	}
 }

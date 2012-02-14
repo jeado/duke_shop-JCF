@@ -1,6 +1,8 @@
 package com.dukeShop;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import jcf.query.core.QueryExecutor;
 
@@ -21,7 +23,7 @@ import com.dukeShop.service.OrderService;
 
 
 //Groovy 사용
-@ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
+@ContextConfiguration("classpath:config/applicationContext.xml")
 
 public class CustomerModelTest {
 
@@ -54,6 +56,17 @@ public class CustomerModelTest {
 	@Test
 	public void 고객_삭제테스트(){
 		customerService.deleteCustomer(customer);
+	}
+
+	@Test
+	public void 고객_검색테스트(){
+		Map<String, String> map = new HashMap<String, String> ();
+		map.put("id", "andycloudy");
+		List <Customer> customer = customerService.findCustomer(map);
+
+		for (Customer c: customer){
+			System.out.println(c.getName());
+			}
 	}
 
 	@Test

@@ -69,15 +69,4 @@
     <url-pattern>/logout.do</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-    <description></description>
-    <display-name>JoinCustomer</display-name>
-    <servlet-name>JoinCustomer</servlet-name>
-    <servlet-class>sumin.summer.controller.JoinCustomer</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>JoinCustomer</servlet-name>
-    <url-pattern>/JoinCustomer.do</url-pattern>
-  </servlet-mapping>
-
-</web-app>
+ </web-app>

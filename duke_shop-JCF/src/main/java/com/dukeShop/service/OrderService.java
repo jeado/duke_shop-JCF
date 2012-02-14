@@ -16,15 +16,15 @@ public class OrderService {
 	private QueryExecutor dao;
 
 	public List <Orders> getAllOrders(){
-		//return dao.queryForList("orders.select", null, Orders.class);
+		return dao.queryForList("orders.select", null, Orders.class);
 
-		return dao.queryForList(OrderQuery.selectAll, null, Orders.class);
+		//return dao.queryForList(OrderQuery.selectAll, null, Orders.class);
 
 	}
 
 	public void insertOrders (Orders orders){
-		//dao.update("orders.insert", orders);
-		dao.update(OrderQuery.insert, orders);
+		dao.update("orders.insert", orders);
+		//dao.update(OrderQuery.insert, orders);
 	}
 
 	public void updateOrders (Orders orders){
