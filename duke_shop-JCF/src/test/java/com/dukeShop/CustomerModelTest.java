@@ -1,6 +1,8 @@
 package com.dukeShop;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 import org.junit.Before;
@@ -14,7 +16,7 @@ import com.dukeShop.model.Customer;
 import com.dukeShop.service.CustomerService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
+@ContextConfiguration("classpath:config/applicationContext.xml")
 public class CustomerModelTest {
 	private Customer c;
 	
@@ -24,11 +26,11 @@ public class CustomerModelTest {
 	@Before
 	public void 셋업() {
 		c = new Customer();
-		c.setUserId("qwe");
+		c.setId("qwe");
 		c.setPhone("0000");
 		c.setEmail("email");
 		c.setName("agqwegg");
-		c.setPassword("111");	
+		c.setPasswd("111");	
 	}
 	
 	@Test
@@ -39,6 +41,20 @@ public class CustomerModelTest {
 			System.out.println(c.getName());
 		}
 
+	}
+
+	@Test
+	public void 고객검색테스트()
+	{
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("id", "shin");
+		List<Customer> findCustomer = customerservice.findCustomer(map);
+		
+		for(Customer c : findCustomer)
+		{
+			System.out.println(c.getId());
+		}
+		
 	}
 	
 	@Test

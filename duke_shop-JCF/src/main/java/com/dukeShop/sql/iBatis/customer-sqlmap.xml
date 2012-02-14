@@ -4,6 +4,15 @@
 	<statement id="select" resultClass="com.dukeShop.model.Customer">
 		select * from customer
 	</statement>
+	
+	<statement id="find" parameterClass="java.util.Map" resultClass="com.dukeShop.model.Customer">
+		SELECT * FROM CUSTOMER
+		<dynamic prepend="WHERE ">
+			<isNotEmpty property="id" prepend="and">
+				id = #id#
+			</isNotEmpty>
+		</dynamic>
+	</statement>
 
 	<insert id="insert" parameterClass="com.dukeShop.model.Customer">
 		insert into customer values(
