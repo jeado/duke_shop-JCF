@@ -7,7 +7,7 @@
 
 	<insert id="insert" parameterClass="com.dukeShop.model.Orders">
 		insert into orders values(
-		ORDERS_SEQUENCE.nextVal,
+		orders_sequence.nextval,
 		#pid#,
 		#cid#,
 		#qty#,

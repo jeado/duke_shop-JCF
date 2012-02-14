@@ -14,18 +14,18 @@ import com.dukeShop.model.Customer;
 import com.dukeShop.service.CustomerService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:config/applicationContext.xml")
+@ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
 public class CustomerModelTest {
 	private Customer c;
 	@Autowired
 	private CustomerService customerservice;
-
+	
 	@Before
 	public void 셋업() {
 		c = new Customer();
-		c.setUserId("ab");
+		c.setUserId("kgyrt");
 		c.setName("aggg");
-		c.setPassword("111");
+		c.setPassword("1111");
 		c.setPhone("0000");
 		c.setEmail("email");
 	}

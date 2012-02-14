@@ -25,7 +25,7 @@ public class OrderModelTest {
 	@Before
 	public void 셋업() {
 		o = new Orders();
-		o.setPid("p001");
+		o.setPid("p002");
 		o.setId("yskim");
 		o.setQty(2);
 	}
