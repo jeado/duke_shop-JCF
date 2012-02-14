@@ -6,6 +6,23 @@
 		select * from CUSTOMER
 	</select>
 
+	<select id="find" parameterClass="java.util.Map" resultClass="com.dukeShop.model.Customer">
+		select * from customer
+		<dynamic prepend="where">
+			<isNotEmpty property="id" prepend="and">
+				id=#id#
+			</isNotEmpty>
+			<isNotEmpty property="id" prepend="and">
+				name=#id#
+			</isNotEmpty>
+			<isNotEmpty property="passwd" prepend="and">
+				passwd = #passwd#
+			</isNotEmpty>
+		</dynamic>
+	</select>
+
+
+
 	<insert id="insert" parameterClass="com.dukeShop.model.Customer">
 		insert into CUSTOMER values(
 			#id#,

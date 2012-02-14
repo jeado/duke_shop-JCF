@@ -1,6 +1,7 @@
 package com.dukeShop.service;
 
 import java.util.List;
+import java.util.Map;
 
 import jcf.query.core.QueryExecutor;
 
@@ -16,12 +17,12 @@ public class CustomerService {
 	@Autowired
 	private QueryExecutor dao;
 
-	/*public List<Customer> getAllCustomer(){
-		return dao.queryForList("customer.select",null, Customer.class);
-	}*/
-
 	public List<Customer> getAllCustomer(){
-	return dao.queryForList(CustomerQuery.selectAll,null, Customer.class);
+		return dao.queryForList("customer.select",null, Customer.class);
+	}
+
+	public List<Customer> findCustomer(Map<String,String> map){
+		return dao.queryForList("customer.find",map, Customer.class);
 	}
 
 	public void insertCustomer(Customer customer){

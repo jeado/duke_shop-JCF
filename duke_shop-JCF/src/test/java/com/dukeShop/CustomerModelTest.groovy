@@ -14,7 +14,7 @@ import com.dukeShop.service.CustomerService;
 import com.dukeShop.sql.groovy.CustomerQuery;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
+@ContextConfiguration("classpath:config/applicationContext.xml")
 public class CustomerModelTest {
 
 	private Customer customer;
@@ -50,6 +50,19 @@ public class CustomerModelTest {
 		for (Customer customer : queryForList) {
 			System.out.print(customer.getId()+" : ");
 			System.out.println(customer.getPasswd());
+		}
+	}
+
+	@Test
+	public void 고객검색_테스트(){
+
+		Map<String,String> map = new HashMap<String,String>();
+		map.put("id", "ddd");
+		map.put("passwd","1234");
+		List<Customer> queryForList = customerService.findCustomer(map);
+
+		for (Customer customer : queryForList) {
+			System.out.println(customer.getId());
 		}
 	}
 
