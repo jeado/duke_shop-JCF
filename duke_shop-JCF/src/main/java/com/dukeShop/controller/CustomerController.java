@@ -1,5 +1,6 @@
 package com.dukeShop.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import jcf.sua.mvc.MciRequest;
@@ -26,6 +27,16 @@ public class CustomerController {
 	public void showJoinView (MciRequest mciRequest, MciResponse mciResponse){
 		mciResponse.setViewName("join_member");
 
+	}
+
+	@SuppressWarnings("unchecked")
+	@RequestMapping ("findCustomer")
+	public void findCustomer(MciRequest mciRequest, MciResponse mciResponse){
+		Map param = mciRequest.getParam();
+		List<Customer> findCustomer = customerService.findCustomer(param);
+
+		mciResponse.setList("pp", findCustomer, Customer.class);
+		mciResponse.setViewName("customer_list");
 	}
 
 	@RequestMapping("joinCustomer")
