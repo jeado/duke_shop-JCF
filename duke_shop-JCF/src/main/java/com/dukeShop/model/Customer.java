@@ -1,13 +1,13 @@
 package com.dukeShop.model;
 
-import java.io.Serializable;
 
 
-public class Customer implements Serializable{
 
-	private static final long serialVersionUID = 1L;
+public class Customer{
 
-	private String cid;
+//	private static final long serialVersionUID = 1L;
+
+	private String id;
 	private String passwd;
 	private String name;
 	private String email;
@@ -38,27 +38,6 @@ public class Customer implements Serializable{
 		super();
 	}
 
-
-	public String getUserId() {
-		return cid;
-	}
-
-
-	public void setUserId(String userId) {
-		this.cid = userId;
-	}
-
-
-	public String getPassword() {
-		return passwd;
-	}
-
-
-	public void setPassword(String password) {
-		this.passwd = password;
-	}
-
-
 	public String getName() {
 		return name;
 	}
@@ -69,12 +48,37 @@ public class Customer implements Serializable{
 	}
 
 
-	public Customer(String userId, String password, String name) {
-		super();
-		this.cid = userId;
-		this.passwd = password;
-		this.name = name;
+	public String getId() {
+		return id;
 	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+	public String getPasswd() {
+		return passwd;
+	}
+
+
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
+	}
+
+
+	public Customer(String id, String passwd, String name, String email,
+			String phone) {
+		super();
+		this.id = id;
+		this.passwd = passwd;
+		this.name = name;
+		this.email = email;
+		this.phone = phone;
+	}
+
+
 
 
 

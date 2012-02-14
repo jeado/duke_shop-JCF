@@ -25,13 +25,12 @@ public class ProductModelTest {
 	@Before
 	public void 셋업() {
 		p=new Product();
-		p.setPid("p006");
-		p.setPname("무지개셔츠");
+		p.setPid("p007");
+		p.setPname("똥색셔츠");
 		p.setPhoto("images/s1.jpg");
-		p.setDesc("무지개색 셔츠입니다.");
+		p.setDesc("똥색 셔츠입니다.");
 		p.setPrice(10000);
 		p.setStock(30);
-	
 	}
 
 	@Test
@@ -41,7 +40,6 @@ public class ProductModelTest {
 		for(Product p: allProduct) {
 			System.out.println(p.getPname());
 		}
-
 	}
 	
 	@Test
