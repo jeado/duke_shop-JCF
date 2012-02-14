@@ -14,7 +14,9 @@ import com.dukeShop.model.Customer;
 import com.dukeShop.service.CustomerService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:config/applicationContext.xml")
+// @ContextConfiguration("classpath:config/applicationContext.xml")
+@ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
+
 public class CustomerModelTest {
 	private Customer c;
 	@Autowired
@@ -31,13 +33,12 @@ public class CustomerModelTest {
 	}
 	
 	@Test
-	public void 고객_조회테스트() {
+	public void 고객_조회테스트() { // Groovy를 이용.
+		
 		List<Customer> allCustomer = customerservice.getAllCustomer();
-
-		for(Customer c: allCustomer) {
+		for(Customer c : allCustomer){
 			System.out.println(c.getName());
 		}
-
 	}
 	@Test
 	public void 고객_입력테스트() {

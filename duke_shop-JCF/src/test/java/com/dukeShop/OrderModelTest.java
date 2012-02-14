@@ -14,8 +14,8 @@ import com.dukeShop.service.OrdersService;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:config/applicationContext.xml")
-
+//@ContextConfiguration("classpath:config/applicationContext.xml")
+@ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
 public class OrderModelTest {
 	private Orders o;
 	@Autowired

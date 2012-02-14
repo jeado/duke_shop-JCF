@@ -12,7 +12,6 @@
 		#description#,
 		#price#,
 		#stock#
-
 		)
 	</insert>
 	<statement id="update" parameterClass="com.dukeShop.model.Product">
