@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dukeShop.model.Customer;
+import com.dukeShop.sql.groovy.CustomerQuery;
 
 @Service
 public class CustomerService {
@@ -15,8 +16,12 @@ public class CustomerService {
 	@Autowired
 	private QueryExecutor dao;
 
-	public List<Customer> getAllCustomer(){
+	/*public List<Customer> getAllCustomer(){
 		return dao.queryForList("customer.select",null, Customer.class);
+	}*/
+	
+	public List<Customer> getAllCustomer(){
+	return dao.queryForList(CustomerQuery.selectAll,null, Customer.class);
 	}
 
 	public void insertCustomer(Customer customer){

@@ -13,7 +13,7 @@ import com.dukeShop.model.Customer;
 import com.dukeShop.service.CustomerService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:config/applicationContext.xml")
+@ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
 public class CustomerModelTest {
 
 	private Customer customer;
