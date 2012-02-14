@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dukeShop.model.Customer;
 import com.dukeShop.service.CustomerService;
+import com.dukeShop.sql.groovy.CustomerQuery;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:config/applicationContext-Groovy.xml")
@@ -25,12 +26,22 @@ public class CustomerModelTest {
 	public void 셋업(){
 		customer = new Customer();
 		customer.setId("ddd");
-		customer.setPasswd("1111");
+		customer.setPasswd("1234");
 		customer.setEmail("ddd");
 		customer.setName("ddd");
 		customer.setPhone("111");
-		
+
 	}
+
+	/*@Test
+	public void 고객_조회테스트(){
+		List<Customer> queryForList = customerService.getAllCustomer();
+
+		for (Customer customer : queryForList) {
+			System.out.print(customer.getId()+" : ");
+			System.out.println(customer.getPasswd());
+		}
+	}*/
 
 	@Test
 	public void 고객_조회테스트(){

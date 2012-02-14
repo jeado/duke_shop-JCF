@@ -1,11 +1,8 @@
 package com.dukeShop.model;
 
-import java.io.Serializable;
 
 
-public class Customer implements Serializable{
-
-	private static final long serialVersionUID = 1L;
+public class Customer{
 
 	private String id;
 	private String passwd;

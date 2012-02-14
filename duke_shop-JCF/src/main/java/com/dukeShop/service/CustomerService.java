@@ -12,14 +12,14 @@ import com.dukeShop.sql.groovy.CustomerQuery;
 
 @Service
 public class CustomerService {
-	
+
 	@Autowired
 	private QueryExecutor dao;
 
 	/*public List<Customer> getAllCustomer(){
 		return dao.queryForList("customer.select",null, Customer.class);
 	}*/
-	
+
 	public List<Customer> getAllCustomer(){
 	return dao.queryForList(CustomerQuery.selectAll,null, Customer.class);
 	}
@@ -28,12 +28,24 @@ public class CustomerService {
 		dao.update("customer.insert", customer);
 	}
 
-	public void updateCustomer(Customer customer){
+	/*public void insertCustomer(Customer customer){
+		dao.update(CustomerQuery.insert, customer);
+	}*/
+
+	/*public void updateCustomer(Customer customer){
 		dao.update("customer.update", customer);
+	}*/
+
+	public void updateCustomer(Customer customer){
+		dao.update(CustomerQuery.update, customer);
 	}
 
-	public void deleteCustomer(Customer customer){
+	/*public void deleteCustomer(Customer customer){
 		dao.update("customer.delete", customer);
+	}*/
+
+	public void deleteCustomer(Customer customer){
+		dao.update(CustomerQuery.delete, customer);
 	}
 
 }
