@@ -17,11 +17,11 @@
 	<statement id="update" parameterClass="com.dukeShop.model.Customer">
 		UPDATE CUSTOMER SET
 		id = #id#,
-		name = #name#,
 		passwd = #passwd#,
+		phone = #phone#,
 		email = #email#,
-		phone = #phone#{
-		WHERE id = #id#}
+		name = #name#
+		WHERE id = #id#
 
 	</statement>
 

@@ -2,8 +2,7 @@ package com.dukeShop.sql.iBatis;
 
 import java.util.List;
 
-import jcf.query.core.QueryExecutor;
-
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,49 +10,47 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dukeShop.model.Customer;
+import com.dukeShop.service.CustomerService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:config/applicationContext.xml")
 public class CustomerModelTest {
+
+	private Customer customer;
+
+
 	@Autowired
-	private QueryExecutor queryExecutor;
+	private CustomerService customerService;
 
+	 @Before
+	 public void 셋업(){
+		 customer = new Customer();
+		 customer.setId("tesst");
+		 customer.setPasswd("d4e2");
+		 customer.setName("10");
+		 customer.setEmail("kdy");
+		  customer.setPhone("123");
+
+	 }
+	 @Test
+	 public void 제품_조회테스트(){
+		 List<Customer> allProduct = customerService.getAllProduct();
+				 for(Customer customer : allProduct){
+					 System.out.println(customer.getId());
+				 }
+	 }
 	@Test
-	 public void 고객_입력테스트(){
-		 Customer customer = new Customer();
-		 customer.setId("1sdf245");
-		 customer.setPasswd("1234");
-		 customer.setPhone("010");
-		 customer.setEmail("kdytajo");
-		 customer.setName("대연이");
-
-		 queryExecutor.update("customer.insert", customer);
-
+	 public void 제품_입력테스트(){
+		customerService.insertCustomer(customer);
 	 }
 
 	 @Test
-	 public void 고객_조회테스트(){
-		 List<Customer> queryForList = queryExecutor.queryForList("customer.select", null, Customer.class);
-		 for(Customer customer : queryForList)
-		 {
-			 System.out.println(customer.getName());
-		 }
+	 public void 제품_수정테스트(){
+		 customerService.updateCustomer(customer);
 	 }
 	 @Test
-	 public void 고객_수정테스트(){
-		 Customer customer = new Customer();
-		 customer.setId("aa3s4c");
-		 
-		 queryExecutor.update("customer.update", customer);
-
+	 public void 제품_삭제테스트(){
+		 customerService.deleteCustomer(customer);
 	 }
-	 @Test
-	 public void 고객_삭제테스트(){
-		 Customer customer = new Customer();
-		 customer.setId("123");
-		 queryExecutor.update("customer.delete", customer);
-
-	 }
-	 
 
 }
