@@ -20,7 +20,7 @@
 				<td>가격</td>
 				<td>재고량</td>
 			</tr>
-		<c:forEach var="p" items="${pp}">
+		<c:forEach var="p" items="${sessionScope.pp}">
 			<tr>
 				<td><a href="product_detail.jsp?pid=${p.pid}">${p.pid}</a></td>
 				<td><a href="product_detail.jsp?pid=${p.pid}">
@@ -30,11 +30,11 @@
 				<td>${p.price }</td>
 				<td>${p.stock }</td>
 			</tr>
-
+		
 		</c:forEach>
 		</table>
-
-
+	
+	
 	</form>
 </body>
 </html>

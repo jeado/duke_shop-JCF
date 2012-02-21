@@ -8,11 +8,11 @@
 
 </head>
 <body>
-<form action="JoinCustomer.do" method="POST">
+<form action="JoinCustomer.action" method="POST">
 	<table border="1" cellpadding="5" cellspacing="0" width="500">
 		<tr>
 			<td>아이디</td>
-			<td><input type="text" name="userId" ></td>
+			<td><input type="text" name="id" ></td>
 		</tr>
 		<tr>
 			<td>이름 </td>
@@ -20,17 +20,13 @@
 		</tr>
 		<tr>
 			<td>비밀번호</td>
-			<td><input type="password" name="password"></td>
+			<td><input type="password" name="passwd"></td>
 
 		</tr>
-		<tr>
-			<td>비밀번호 확인</td>
-			<td><input type="password" name="password"></td>
 
-		</tr>
 		<tr>
 			<td>전화번호</td>
-			<td><input type="text" name="deptName"></td>
+			<td><input type="text" name="phone"></td>
 
 		</tr>
 		<tr>

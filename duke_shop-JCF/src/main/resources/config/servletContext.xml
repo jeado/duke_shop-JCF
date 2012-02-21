@@ -41,13 +41,13 @@
 			<bean class="jcf.sua.ux.webflow.mvc.file.WebFlowFileOperator">
 				<property name="receiver" ref="multiPartReceiver" />
 				<property name="sender" ref="fileSender" />
-<!-- 				<property name="uploadEventHandlers">
+ 				<property name="uploadEventHandlers">
 					<map>
-						<entry key="/**/user/*User">
-							<bean class="jcf.edu.user.fileHandler.UserPicUploadEventHandler" />
+						<entry key="/**/insertProduct.action">
+       					<bean class="com.dukeShop.file.ProductEventHandler" />
 						</entry>
 					</map>
-				</property> -->
+				</property>
 			</bean>
 		</property>
 	</bean>

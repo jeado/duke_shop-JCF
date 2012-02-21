@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <body class="mainbody">
 
+
 <div class="bodybox">
 
 <%---------------------------------- 제일 위의 로고& 로그인/ 로그아웃 페이지 -----------------------------%>
